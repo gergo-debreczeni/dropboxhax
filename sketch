@@ -1,0 +1,25 @@
+https://www.dropbox.com/referrals/NTc5Mjk4NTk3OQ?src=global9&fname=d&lname=dd&email=gerry_dropbox7@mailinator.com&password=Passw0rd&tos_agree=True
+
+
+        query_string = {'src': 'global9', 'fname': 'ddd', 'lname': 'gerry' , 'email':'gerry_dropbox7@mailinator.com','password':'Passw0rd','tos_agree':'True'}
+
+        'https://www.dropbox.com/referrals/NTc5Mjk4NTk3OQ?src=global9&tos_agree=True&lname=gerry&fname=ddd&password=Passw0rd&email=gerry_dropbox7%40mailinator.com'
+
+        https://www.dropbox.com/referrals/NTc5Mjk4NTk3OQ?src=global9&tos_agree=True&lname=gerry&fname=ddd&password=Passw0rd&email=gerry_dropbox7%40mailinator.com
+
+        https://www.dropbox.com/ajax_register?referral_code=NTc5Mjk4NTk3OQ&src=global9&tos_agree=True&lname=gerry&fname=ddd&password=Passw0rd&email=gerry_dropbox9%40mailinator.com
+
+ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+ ~/.dropbox-dist/dropboxd
+	This computer isn't linked to any Dropbox account...
+	Please visit https://www.dropbox.com/cli_link_nonce?nonce=4250824f21e5bd8a54425134c3c4cadd to link this device.
+
+	 rm -r ~/.dropbox/
+
+
+	 architecture:
+	 	32 ubuntu vms. all on.
+	 	vm[0] does the first email for every separate dropbox referal, delete ~/.dropbox/, link again to another referal 
+	 	vm[1] does the 2nd email for every separate dropbox referal, delete ~/.dropbox/, link again to another referal 
+	 	never have to change mac.
+	 	
