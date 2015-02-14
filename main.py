@@ -27,11 +27,14 @@ class DropboxAwesome(object):
 
     def do_magic(self, count):
         for _ in range(count):
-            mac = self.generate_mac()
-            self.configure_vm(mac)
-            base_ = self.rand_name('bob') + '@mailinator.com'
+           # mac = self.generate_mac()
+           #self.configure_vm(mac)
+            base_ = self.rand_name('lxc') + '@mailinator.com'
             self.create_account(base_)
-            addr = self.get_address()
+            import pdb
+            pdb.set_trace()
+            #addr = self.get_address()
+            addr = ''
             self.confirm_account(addr)
             time.sleep(5)
 
@@ -71,6 +74,7 @@ class DropboxAwesome(object):
         self.db.confirm(address)
 
 if __name__ == '__main__':
-    ref_url = 'https://db.tt/EDiAOZdg'
+    #ref_url = 'https://db.tt/z79TgyBk' #inlove
+    ref_url = 'https://db.tt/bS0ks7Nk' #gergo.debre
     win = DropboxAwesome(ref_url)
-    win.do_magic(6)
+    win.do_magic(1)

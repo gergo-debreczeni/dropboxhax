@@ -1,13 +1,13 @@
 from pymailinator.wrapper import Inbox
 import time
-api_key = '31299e973389e4445288424670ec307d36'
+api_key = '299e973389e4445288424670ec307d36'
 
 if __name__ == '__main__':
 	inbox = Inbox(api_key)
 	attempts = 0
 	while True:
 		try:
-			box = inbox.get(mailbox='gerry_dropbox6')
+			box = inbox.get(mailbox='nobodynocryess_100')
 			first = box[0]
 			break
 		except IndexError:
