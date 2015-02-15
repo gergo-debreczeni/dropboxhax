@@ -7,8 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Dropbox(object):
 
-    def __init__(self, refer_mail, mail, password):
-        self.refer_mail = refer_mail
+    def __init__(self, refer_url, mail, password):
+        self.refer_url = refer_url
         self.mail = mail
         self.password = password
 
@@ -16,7 +16,7 @@ class Dropbox(object):
         try:
             driver = webdriver.Firefox()
             driver.implicitly_wait(10)
-            driver.get(self.refer_mail)
+            driver.get(self.refer_url)
             element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "text-input")))
             elem=driver.find_elements_by_class_name("text-input")
             elem[4].send_keys('Jonhatan')
@@ -42,4 +42,8 @@ class Dropbox(object):
             ee[1].send_keys(self.password)
             ee[1].send_keys(Keys.RETURN)
         finally:
-            driver.quit()
+            driver.quit()   
+# if __name__ == "__main__":
+# 	a = Dropbox("https://db.tt/tr6esxYv", "222222222@mailinator.com", "Passw0rd")
+# 	a.register()
+

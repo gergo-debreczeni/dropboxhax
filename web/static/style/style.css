@@ -1,0 +1,14 @@
+body.custom {
+    background: url('background.png') repeat scroll 50% 0;
+}
+
+blockquote {
+font-size: 18px;
+width: 300px;
+line-height: 1.45;
+position: relative;
+color: #FFF;
+border-left:5px solid #d9534f;
+background:#4b8baf;
+border-radius: 8px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src= "{{ url_for('static', filename='dboxApp.js') }}"></script>
+</head>
+
+<body ng-app="dboxApp" ng-init="existing={{existing}}" class="custom">
+<br>
+    <!-- {[existing]} -->
+<br>
+<br>
+<div class="container">
+    <center>
+        <div ng-controller="firstController" class"col-md-6 col-md-offset-3">
+            <form class="form-inline " id="my-form" name="myForm" method="post">
+                <div class="form-group">
+                <label for="new-url">Refferal URL:</label>
+                <input class="form-control span9" type="text" id="new-url" placeholder="add url for review" ng-model="newUrl" autofocus> 
+                </div> 
+
+                <div class="btn-group">
+                    <a href="javascript:void(0)" ng-click="button = 'free'" ng-class="{'active':button=='free'}" class="btn btn-danger">free</a>
+                    <a href="javascript:void(0)" ng-click="button = 'three'" ng-class="{'active':button=='three'}" class="btn btn-danger">3$</a>
+                    <a href="javascript:void(0)" ng-click="button = 'five'" ng-class="{'active':button=='five'}" class="btn btn-danger">5$</a>
+            </div>
+
+                <button class="btn btn-sm btn-primary" type="button" ng-click="getLocation()">Max my box!</button>
+                <span class="text-danger" ng-show="showWarning">Please fill in the field</span>
+                <span class="text-danger" ng-show="showBadUrlWarning">Not a valid URL</span>
+            </form>
+            <br>
+        </div>
+    </center>
+    <div class="col-md-3 col-md-offset-1">
+    <h3 class="text-primary"><strong>Free</strong></h3>
+    <blockquote>
+        <p>You don't wanna pay? you get little storage.</p>
+    </blockquote>
+    </div>
+
+    <div class="col-md-3 col-md-offset-1">
+    <h3 class="text-primary"><strong>Three</strong></h3>
+    <blockquote>
+        <p>You pay some money, we get 3$, you get more space for your porn collection.</p>
+    </blockquote>
+    </div>
+
+    <div class="col-md-3 col-md-offset-1">
+    <h3 class="text-primary"><strong>Five</strong></h3>
+    <blockquote>
+        <p>16Gb for the generous God that you are. Amazing how much storage you need to keep photos of your pet hamster.</p>
+    </blockquote>
+    </div>
+</div>
+
+</body>
+
+</html>
