@@ -34,12 +34,3 @@ class Dropbox(object):
         finally:
             driver.quit()
         pass
-
-if __name__ == "__main__":
-
-    #ref_url = 'https://db.tt/bS0ks7Nk' #gergo.debre
-    ref_url = 'https://db.tt/tr6esxYv' #gerry_dropbox1@mailinator.com Passw0rd
-    mail = 'nobodynocryess_%i@mailinator.com'
-    #for _ in xrange(4):
-    db = Dropbox(ref_url, mail, 'Passw0rd')
-    db.register()

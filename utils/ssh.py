@@ -13,6 +13,28 @@ with warnings.catch_warnings():
 
 class Client(object):
 
+    def _get_config(self):
+        ### should but don't work :(
+        config = paramiko.SSHConfig()
+        config_path = os.path.expanduser("~/.ssh/config")
+
+        try:
+            with open(config_path) as f:
+                config.parse(f)
+        except IOError:
+            pass
+
+        host_config = config.lookup(self.host)
+
+        self.host = host_config.get('hostname', self.host)
+        self.username = host_config.get('user', self.username)
+        self.port = host_config.get('port', self.port)
+
+        if 'proxycommand' in host_config:
+            self.sock = paramiko.ProxyCommand(host_config['proxycommand'])
+
+
+
     def __init__(self, host, username, password=None, timeout=300, pkey=None,
                  channel_timeout=10, look_for_keys=False, key_filename=None):
         self.host = host
@@ -28,6 +50,11 @@ class Client(object):
         self.timeout = int(timeout)
         self.channel_timeout = float(channel_timeout)
         self.buf_size = 1024
+        get_lxc_ip = (' echo $(host $(echo %(container)s.lxc | sed "s/\\.lxc//g") 10.0.3.1 '
+                      '| tail -1 | awk \'{print $NF}\')') % {'container': host}
+        s_int, s_out, s_err = os.popen3(get_lxc_ip)
+        container = s_out.read().strip()
+        self.host = container
 
     def _get_ssh_connection(self, sleep=1.5, backoff=1):
         """Returns an ssh connection to the specified host."""
@@ -44,6 +71,7 @@ class Client(object):
                             look_for_keys=self.look_for_keys,
                             key_filename=self.key_filename,
                             timeout=self.channel_timeout, pkey=self.pkey)
+
                 return ssh
             except Exception as e:
                 if self._is_timed_out(_start_time):
