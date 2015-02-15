@@ -1,5 +1,6 @@
 from utils.selenium_utils import Dropbox
 from utils import ssh
+from utils import powershell
 from utils.lxc_executor import Executor
 import random
 import time
@@ -8,13 +9,13 @@ import time
 class DropboxAwesome(object):
 
 
-    def __init__(self, ref_url, desired_count):
+    def __init__(self, ref_url, base_fake_mail, desired_count):
         self.ref_url = ref_url
-        self.ip_address ='192.168.0.100'
-        self.user = 'root'
-        self.password = 'Passw0rd'
+        self.base_fake_mail = base_fake_mail
         self.desired_count = desired_count
         self.mails = []
+        self.user = 'root'
+        self.password = 'Passw0rd'
         self.lxc_workers = ['test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11',
                             'test12', 'test13', 'test14', 'test15', 'test16', 'test17', 'test18', 'test19', 'test20', 'test21',
                             'test22', 'test23','test24', 'test25', 'test26', 'test27', 'test28', 'test29', 'test30', 'test31', 'test32']
@@ -39,7 +40,7 @@ class DropboxAwesome(object):
             return randbits
 
     def create_accounts(self):
-        base_mail = self.rand_name('test4_lxc_%i_') + '@mailinator.com'
+        base_mail = self.rand_name(self.base_fake_mail) + '@mailinator.com'
         for _ in xrange(self.desired_count):
             self.mails.append(base_mail % _)
         self.db = Dropbox(self.ref_url, self.mails, self.password)
@@ -49,6 +50,7 @@ class DropboxAwesome(object):
         self.db.confirm(confirm_urls)
 
 if __name__ == '__main__':
-    ref_url = 'https://db.tt/IPOLaIda'
-    win = DropboxAwesome(ref_url, 2)
+    ref_url = 'https://db.tt/EDiAOZdg' #bob_ref
+    base_fake_mail = 'linux_valentin_%i_'
+    win = DropboxAwesome(ref_url, base_fake_mail, 13)
     win.do_magic()
