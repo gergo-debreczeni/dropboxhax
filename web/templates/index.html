@@ -10,7 +10,7 @@
 
 <body ng-app="dboxApp" ng-init="existing={{existing}}" class="custom">
 <br>
-    <!-- {[existing]} -->
+    {[existing]}
 <br>
 <br>
 <div class="container">
@@ -29,7 +29,7 @@
             </div>
 
                 <button class="btn btn-sm btn-primary" type="button" ng-click="getLocation()">Max my box!</button>
-                <span class="text-danger" ng-show="showWarning">Please fill in the field</span>
+                </strong><span class="text-danger" ng-show="showWarning"><strong>Please fill in the field.</strong></span>
                 <span class="text-danger" ng-show="showBadUrlWarning">Not a valid URL</span>
             </form>
             <br>
