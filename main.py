@@ -50,7 +50,12 @@ class DropboxAwesome(object):
         self.db.confirm(confirm_urls)
 
 if __name__ == '__main__':
-    ref_url = 'https://db.tt/EDiAOZdg' #bob_ref
-    base_fake_mail = 'linux_valentin_%i_'
-    win = DropboxAwesome(ref_url, base_fake_mail, 13)
+    ref_url = 'https://db.tt/QWzHr5Pc'
+    base_fake_mail = 'abdil_mirantis_%i'
+    #runtime
+    #Sun Feb 22 13:44:09 EET 2015
+    #Sun Feb 22 13:49:18 EET 2015
+    win = DropboxAwesome(ref_url, base_fake_mail, 10)
     win.do_magic()
+
+

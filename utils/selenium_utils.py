@@ -48,5 +48,7 @@ class Dropbox(object):
                 ee=driver.find_elements_by_class_name("password-input")
                 ee[1].send_keys(self.password)
                 ee[1].send_keys(Keys.RETURN)
+                time.sleep(1)
+                driver.delete_all_cookies()
         finally:
             driver.quit()
