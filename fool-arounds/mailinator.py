@@ -1,6 +1,6 @@
 from pymailinator.wrapper import Inbox
 import time
-api_key = '31299e973389e4445288424670ec307d36'
+api_key = ''
 
 if __name__ == '__main__':
 	inbox = Inbox(api_key)
