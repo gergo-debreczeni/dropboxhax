@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 MAIL_LINK = "https://www.dropbox.com/cli_link_nonce?nonce=3a06e71702666bca17a4b37568dce45a"
 EMAIL = 'gerry_dropbox11@mailinator.com'
-PASSWORD = 'Passw0rd'
+PASSWORD = 'carrotParr0ts'
 
 if __name__ == '__main__':
 	try:
